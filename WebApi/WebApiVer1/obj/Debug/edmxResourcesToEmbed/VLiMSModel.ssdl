@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VLMSMainDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Borrowing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BorrowingUserId" Type="bigint" Nullable="false" />
+    <Property Name="ReservationId" Type="bigint" />
+    <Property Name="ItemId" Type="bigint" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="OriginalEndDate" Type="date" />
+    <Property Name="RentCost" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="Fine" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedByUserId" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LastModifiedByUserId" Type="bigint" />
+    <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BorrowingRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestUserId" Type="bigint" Nullable="false" />
+    <Property Name="ItemId" Type="bigint" Nullable="false" />
+    <Property Name="RequestType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="ApprovedByUserId" Type="bigint" />
+    <Property Name="ApprovedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="CreatedByUserId" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LastModifiedByUserId" Type="bigint" />
+    <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="ParrentCategoryId" Type="int" />
+    <Property Name="LibraryId" Type="int" />
+    <Property Name="CreatedByUserId" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LastModifiedByUserId" Type="bigint" />
+    <Property Name="LastModifiedDataTime" Type="datetime2" Precision="7" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AdditionalName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="ManufactoryId" Type="int" />
+    <Property Name="MadeInCountryId" Type="int" />
+    <Property Name="ManagedByLibrarianId" Type="bigint" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="ContributorId" Type="bigint" />
+    <Property Name="ContributionDate" Type="date" />
+    <Property Name="OriginalPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PresentValue" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LastModifiedByUserId" Type="bigint" />
+    <Property Name="LastModifiedDataTime" Type="datetime2" Precision="7" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ItemId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ItemProfilePhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="ItemId" Type="bigint" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="FileType" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProfileOrder" Type="int" Nullable="false" />
+    <Property Name="IsThumbnail" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JoinningRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="SubmittedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ApprovedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ApprovedUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="LibraryAdminId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Manuafactory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToUserId" Type="bigint" Nullable="false" />
+    <Property Name="NotificationDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NotificationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Item" Type="bigint" />
+    <Property Name="SurveyDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ReviewContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rating" Type="int" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Transfer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransferFromUserId" Type="bigint" Nullable="false" />
+    <Property Name="TransferToUserId" Type="bigint" Nullable="false" />
+    <Property Name="ItemId" Type="bigint" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="TransferType" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BorrowingId" Type="bigint" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="SubmittedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="ConfirmedDateTime" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="LibrarianId" Type="bigint" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="VLMSMainDBModelStoreContainer">
+    <EntitySet Name="Borrowing" EntityType="Self.Borrowing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BorrowingRequest" EntityType="Self.BorrowingRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemCategory" EntityType="Self.ItemCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemProfilePhoto" EntityType="Self.ItemProfilePhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JoinningRequest" EntityType="Self.JoinningRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Library" EntityType="Self.Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manuafactory" EntityType="Self.Manuafactory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transfer" EntityType="Self.Transfer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
