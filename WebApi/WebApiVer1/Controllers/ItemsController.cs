@@ -16,23 +16,23 @@ namespace WebApiVer1.Controllers
     public class ItemsController : ApiController
     {
         private static List<Item> items = new List<Item>(new Item[] {
-            new Item { Id = 1, Name = "Demon  & Angel", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Mystery Adventure", ManufactoryId = 2  },
-            new Item { Id = 2, Name = "Da Vinci Code", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Another Mystery Adventure" , ManufactoryId = 2},
-            new Item { Id = 3, Name = "Infernal", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "New Mystery Adventure", ManufactoryId = 2},
-            new Item { Id = 4, Name = "Infernal", AdditionalName="Infernal#2", LibraryId = 2, ContributorId = 1, IsActive = true, Description = "New Mystery Adventure", ManufactoryId = 2},
-            new Item { Id = 5, Name = "Infernal", AdditionalName="Infernal#3", LibraryId = 3, ContributorId = 1, IsActive = true, Description = "Brand New Mystery Adventure", ManufactoryId = 2},
-            new Item { Id = 6, Name = "Infernal", AdditionalName="Infernal#4", LibraryId = 4, ContributorId = 1, IsActive = true, Description = "Super New Mystery Adventure", ManufactoryId = 2},
-            new Item { Id = 7, Name = "Infernal", AdditionalName="Infernal#5", LibraryId = 5, ContributorId = 1, IsActive = true, Description = "Somehow New Mystery Adventure", ManufactoryId = 2},
-            new Item { Id = 8, Name = "Infernal", AdditionalName="Infernal#6", LibraryId = 6, ContributorId = 1, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 2},
+            new Item { Id = 1, Name = "Demon  & Angel", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Mystery Adventure", ManufactoryId = 2, StatusId = 1  },
+            new Item { Id = 2, Name = "Da Vinci Code", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Another Mystery Adventure" , ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 3, Name = "Infernal", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "New Mystery Adventure", ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 4, Name = "Infernal", AdditionalName="Infernal#2", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "New Mystery Adventure", ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 5, Name = "Infernal", AdditionalName="Infernal#3", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Brand New Mystery Adventure", ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 6, Name = "Infernal", AdditionalName="Infernal#4", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Super New Mystery Adventure", ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 7, Name = "Infernal", AdditionalName="Infernal#5", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Somehow New Mystery Adventure", ManufactoryId = 2, StatusId = 1},
+            new Item { Id = 8, Name = "Infernal", AdditionalName="Infernal#6", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 2, StatusId = 1},
 
-            new Item { Id = 9, Name = "One Piece 1", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 10, Name = "One Piece 2", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 11, Name = "One Piece 3", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 12, Name = "One Piece 4", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 13, Name = "One Piece 5", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 14, Name = "One Piece 6", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 15, Name = "One Piece 7", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1},
-            new Item { Id = 16, Name = "One Piece 8", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1}
+            new Item { Id = 9, Name = "One Piece 1", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 10, Name = "One Piece 2", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 11, Name = "One Piece 3", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 12, Name = "One Piece 4", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 13, Name = "One Piece 5", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 14, Name = "One Piece 6", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 15, Name = "One Piece 7", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 1},
+            new Item { Id = 16, Name = "One Piece 8", LibraryId = 1, ContributorId = 8, IsActive = true, Description = "Forever Mystery Adventure", ManufactoryId = 1, StatusId = 2}
         });
 
         private static List<Category> categories = new List<Category>(new Category[]
@@ -135,6 +135,144 @@ namespace WebApiVer1.Controllers
             new Notification { Id = 3, ToUserId = 2, NotificationType = "Aprroved", Message = "Library ABC approved your jouning request", StatusId = 1 }
         });
 
+        private static List<Status> statusList = new List<Status>(new Status[]
+        {
+            // for item
+            new Status { Id = 1, Name = "Available", Type = "ForItem" },
+            new Status { Id = 2, Name = "Unavailable", Type = "ForItem" },
+
+            // for request
+            new Status { Id = 3, Name = "Submitted", Type = "ForRequest" },
+            new Status { Id = 4, Name = "Approved", Type = "ForRequest" },
+            new Status { Id = 5, Name = "Rejected", Type = "ForRequest" },
+            new Status { Id = 5, Name = "Cancelled", Type = "ForRequest" },
+
+            // for borrowing
+            new Status { Id = 6, Name = "Reserved", Type = "ForBorrowing" },
+            new Status { Id = 7, Name = "Cancelled", Type = "ForBorrowing" },
+            new Status { Id = 8, Name = "Borrowing", Type = "ForBorrowing" },
+            //new Status { Id = 9, Name = "Extending", Type = "ForBorrowing" },
+            //new Status { Id = 10, Name = "Overdue", Type = "ForBorrowing" },
+            new Status { Id = 11, Name = "Overdue Returned", Type = "ForBorrowing" },
+            new Status { Id = 12, Name = "Returned", Type = "ForBorrowing" },
+            new Status { Id = 13, Name = "Lost", Type = "ForBorrowing" }
+        });
+
+        private static List<BorrowingRequest> requests = new List<BorrowingRequest>(new BorrowingRequest[]
+        {
+            new BorrowingRequest { Id = 1, RequestUserId = 3, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 3, CreatedDateTime = DateTime.Parse("2017-04-04 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 2, RequestUserId = 2, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 2, CreatedDateTime = DateTime.Parse("2017-04-03 5:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 3, RequestUserId = 4, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-07 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 4, CreatedDateTime = DateTime.Parse("2017-04-05 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 4, RequestUserId = 5, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 5, CreatedDateTime = DateTime.Parse("2017-04-04 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 5, RequestUserId = 6, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-07 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 6, CreatedDateTime = DateTime.Parse("2017-04-04 10:12:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 6, RequestUserId = 7, ItemId = 1, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 7, CreatedDateTime = DateTime.Parse("2017-04-04 4:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 7, RequestUserId = 3, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 3, CreatedDateTime = DateTime.Parse("2017-04-04 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 8, RequestUserId = 2, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 2, CreatedDateTime = DateTime.Parse("2017-04-03 5:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 9, RequestUserId = 4, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-07 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 4, CreatedDateTime = DateTime.Parse("2017-04-05 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 10, RequestUserId = 5, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 5, CreatedDateTime = DateTime.Parse("2017-04-04 7:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 11, RequestUserId = 6, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-07 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 6, CreatedDateTime = DateTime.Parse("2017-04-04 10:12:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 12, RequestUserId = 7, ItemId = 2, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 7, CreatedDateTime = DateTime.Parse("2017-04-04 4:00:00Z"), StatusId = 3},
+            new BorrowingRequest { Id = 13, RequestUserId = 7, ItemId = 3, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 7, CreatedDateTime = DateTime.Parse("2017-04-04 4:00:00Z"), StatusId = 4},
+            new BorrowingRequest { Id = 14, RequestUserId = 5, ItemId = 16, LibraryId = 1, RequestType = "Extend",
+                    EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 5, CreatedDateTime = DateTime.Parse("2017-04-05 4:00:00Z"), StatusId = 1},
+            new BorrowingRequest { Id = 15, RequestUserId = 9, ItemId = 16, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-04-06 00:00:00Z"), EndDate = DateTime.Parse("2017-04-10 00:00:00Z"),
+                        CreatedByUserId = 9, CreatedDateTime = DateTime.Parse("2017-04-04 4:00:00Z"), StatusId = 1},
+            new BorrowingRequest { Id = 16, RequestUserId = 5, ItemId = 16, LibraryId = 1, RequestType = "Reservation",
+                    StartDate = DateTime.Parse("2017-03-28 00:00:00Z"), EndDate = DateTime.Parse("2017-04-05 00:00:00Z"),
+                        CreatedByUserId = 5, CreatedDateTime = DateTime.Parse("2017-03-27 4:00:00Z"), StatusId = 2,
+                    ApprovedByUserId = 1, ApprovedDateTime = DateTime.Parse("2017-03-27 7:00:00Z")}
+        });
+
+        private static List<Transfer> tranfers = new List<Transfer>(new Transfer[]
+        {
+            new Transfer { Id = 1, LibraryId = 1, ItemId = 1, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 2, LibraryId = 1, ItemId = 2, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 3, LibraryId = 1, ItemId = 3, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 4, LibraryId = 1, ItemId = 4, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 5, LibraryId = 1, ItemId = 5, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 6, LibraryId = 1, ItemId = 6, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 7, LibraryId = 1, ItemId = 7, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 8, LibraryId = 1, ItemId = 8, TransferType = "Receive", TransferFromUserId = 1,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 9, LibraryId = 1, ItemId = 9, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 10, LibraryId = 1, ItemId = 10, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 11, LibraryId = 1, ItemId = 11, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 12, LibraryId = 1, ItemId = 12, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 13, LibraryId = 1, ItemId = 13, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 14, LibraryId = 1, ItemId = 14, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 15, LibraryId = 1, ItemId = 15, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 16, LibraryId = 1, ItemId = 16, TransferType = "Receive", TransferFromUserId = 8,
+                    TransferToUserId = 1, SubmittedDateTime = DateTime.Parse("2016-04-04 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2016-04-04 4:01:10Z")},
+            new Transfer { Id = 17, LibraryId = 1, ItemId = 16, TransferType = "Borrow", TransferFromUserId = 1,
+                    TransferToUserId = 5, SubmittedDateTime = DateTime.Parse("2016-03-28 4:00:00Z"),
+                    ConfirmedDateTime = DateTime.Parse("2017-03-28 4:01:10Z"), BorrowingId = 1}
+        });
+
+        private static List<Borrowing> borrowingList = new List<Borrowing>(new Borrowing[]
+        {
+            new Borrowing { Id = 1, ItemId = 16, LibraryId = 1, ReservationId = 17, BorrowingUserId = 5,
+                StartDate = DateTime.Parse("2017-03-28 00:00:00Z"), EndDate = DateTime.Parse("2017-04-05 00:00:00Z"),
+                RentCost = 5000, OriginalEndDate = DateTime.Parse("2017-04-05 00:00:00Z"), StatusId = 8 }
+        });
+
         [HttpGet]
         [Route("api/libraries/{libraryId}/items")]
         public IEnumerable<Item> GetAllItems(int libraryId)
@@ -160,7 +298,7 @@ namespace WebApiVer1.Controllers
         [Route("api/libraries/{libraryId}/{categoryId}/items")]
         public IEnumerable<Item> GetAllCategoryItems(int libraryId, int categoryID)
         {
-            return items.Where(i => i.LibraryId == libraryId && i.IsActive == true 
+            return items.Where(i => i.LibraryId == libraryId && i.IsActive == true
                         && itemCategories.Where(iC => iC.CategoryId == categoryID)
                             .Select(iC1 => iC1.ItemId).Contains(i.Id));
         }
@@ -180,8 +318,8 @@ namespace WebApiVer1.Controllers
         }
 
         [HttpGet]
-        [Route("api/libraries/{libraryId}/search?name={name}&category={categoryId}&manufactory={manufactoryId}&contributor={userId}")]
-        public IEnumerable<Item> FindItems(int libraryId, string name, int categoryId, 
+        [Route("api/libraries/{libraryId}/search/name={name}&category={categoryId}&manufactory={manufactoryId}&contributor={userId}")]
+        public IEnumerable<Item> FindItems(int libraryId, string name, int categoryId,
                                                             int manufactoryId, int contributorId)
         {
             return items.Where(i => i.LibraryId == libraryId && i.IsActive == true
@@ -195,6 +333,84 @@ namespace WebApiVer1.Controllers
         public IEnumerable<Notification> GetAllNotification(int userId)
         {
             return notifications.Where(n => n.ToUserId == userId);
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/borrowingRequests")]
+        public IEnumerable<BorrowingRequest> GetPendingBorrowingRequests(int libraryId)
+        {
+            return requests.Where(r => r.LibraryId == libraryId && r.StatusId == 3);
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/reservedItems")]
+        public IEnumerable<Item> GetAllReservedItems(int libraryId)
+        {
+            return items.Where(i => requests.Where(r => r.LibraryId == libraryId && r.StatusId == 3)
+                            .Select(re => re.ItemId).Contains(i.Id));
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/borrowingRequests/{itemId}")]
+        public IEnumerable<BorrowingRequest> GetBorrowingRequests(int libraryId, int itemId)
+        {
+            return requests.Where(r => r.LibraryId == libraryId && r.StatusId == 3 && r.ItemId == itemId);
+        }
+
+        [HttpGet]
+        [Route("api/user/{userId}/pendingRequests")]
+        public IEnumerable<BorrowingRequest> GetAllPendingBorrowingRequests(int userId)
+        {
+            return requests.Where(r => r.RequestUserId == userId);
+        }
+
+        [HttpGet]
+        [Route("api/user/{userId}/borrowings")]
+        public IEnumerable<Borrowing> GetAllUserBorrowing(int userId)
+        {
+            return borrowingList.Where(b => b.BorrowingUserId == userId && (b.StatusId == 8 || b.StatusId == 4));
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/{itemId}/history")]
+        public IEnumerable<Transfer> GetItemHistory(int libraryId, int itemId)
+        {
+            return tranfers.Where(t => t.LibraryId == libraryId && t.ItemId == itemId);
+        }
+
+        [HttpGet]
+        [Route("api/user/{userId}/borrowingHistory")]
+        public IEnumerable<Borrowing> GetUserBorrowingHistory(int userId)
+        {
+            return borrowingList.Where(b => b.BorrowingUserId == userId && (b.StatusId > 10 && b.StatusId < 14));
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/borrowingList")]
+        public IEnumerable<Borrowing> GetBorrowingList(int libraryId)
+        {
+            return borrowingList.Where(b => b.LibraryId == libraryId && (b.StatusId == 8 || b.StatusId == 4));
+        }
+
+        [HttpGet]
+        [Route("api/libraries/{libraryId}/borrowings")]
+        public IEnumerable<Borrowing> GetWholeBorrowing(int libraryId)
+        {
+            return borrowingList.Where(b => b.LibraryId == libraryId);
+        }
+
+        [HttpPost]
+        [Route("api/libraries/{libraryId}/tranfers")]
+        public void AddNewTransfer([FromBody] Transfer transfer)
+        {
+            tranfers.Add(transfer);
+        }
+
+        [HttpPost]
+        [Route("api/libraries/{libraryId}/borrowingRequests")]
+        public void SubmitBorrowingRequests([FromBody] BorrowingRequest borrowingRequest)
+        {
+            requests.Add(borrowingRequest);
         }
     }
 }
