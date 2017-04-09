@@ -4,10 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApiVer1.Controllers
 {
-
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LibrariesController : ApiController
     {
         private static List<Library> libraries = new List<Library>(new Library[] {
