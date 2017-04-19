@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApiVer1.Controllers
 {
@@ -13,8 +14,10 @@ namespace WebApiVer1.Controllers
         public string Name { get; set; }
     }
 
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ItemsController : ApiController
     {
+        
         private static List<Item> items = new List<Item>(new Item[] {
             new Item { Id = 1, Name = "Demon  & Angel", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Mystery Adventure", ManufactoryId = 2, StatusId = 1  },
             new Item { Id = 2, Name = "Da Vinci Code", LibraryId = 1, ContributorId = 1, IsActive = true, Description = "Another Mystery Adventure" , ManufactoryId = 2, StatusId = 1},
@@ -372,10 +375,11 @@ namespace WebApiVer1.Controllers
         }
 
         [HttpGet]
-        [Route("api/libraries/{libraryId}/{itemId}/history")]
-        public IEnumerable<Transfer> GetItemHistory(int libraryId, int itemId)
+        [Route("api/items/history")]
+        public IEnumerable<Transfer> GetItemHistory()
         {
-            return tranfers.Where(t => t.LibraryId == libraryId && t.ItemId == itemId);
+            return tranfers;
+            //return tranfers.Where(t => t.LibraryId == libraryId && t.ItemId == itemId);
         }
 
         [HttpGet]
